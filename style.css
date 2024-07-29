@@ -1,9 +1,12 @@
+/* Resetting Defaults */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
+/* Font Faces */
 @font-face {
   font-family: "Fraunces";
   src: url("./assets/fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf")
@@ -18,53 +21,56 @@
   font-style: normal;
 }
 
+/* Body and General Styles */
 body {
   overflow-x: hidden;
   position: relative;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Fraunces";
-}
-
-h1 {
-  font-size: 5rem;
-}
-h2 {
-  font-size: 3.5rem;
-}
-h3 {
-  font-size: 2rem;
-}
-p,
-a {
-  font-family: "Manrope";
-  font-size: 1.125rem;
+  font-family: "Manrope", sans-serif;
   line-height: 1.5;
 }
 
+/* Typography */
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", serif;
+}
+h1 {
+  font-size: 3rem; /* 3 times the base font size */
+  line-height: 1.2;
+  margin: 0.5em 0;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+  margin: 0.25em 0 0.5em;
+}
+p,
+a {
+  font-size: 1rem; /* Base font size */
+  line-height: 1.2;
+}
+/* Navigation */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2em 4em;
+  padding: 1em 2em;
 }
-
 nav > a {
-  font-size: 1.2rem;
   color: #fff;
   text-decoration: none;
   border-bottom: 2px solid #44ffa1;
   padding-bottom: 0.25em;
   font-weight: 600;
 }
-
 nav > a:hover {
   color: #44ffa1;
 }
 
+/* Hero Section */
 .hero-section {
   background-color: #24053e;
   color: #fff;
@@ -72,31 +78,29 @@ nav > a:hover {
   padding-bottom: 2em;
   position: relative;
 }
-
 .main-heading-highlight {
+  font-size: 3rem;
   border-bottom: 2px solid #44ffa1;
 }
-
 .hero-phone-image {
-  width: 40%;
+  width: 80%; /* Adjusted for small screens */
   position: absolute;
   bottom: -60%;
   left: 50%;
   transform: translateX(-50%);
 }
-
-.left-circle-image {
-  position: absolute;
-  left: 0;
-  top: 20%;
-  transform: translateX(-40%);
-}
+.left-circle-image,
 .right-circle-image {
-  position: absolute;
-  right: -4%;
-  top: 50%;
+  display: none;
+}
+.for-upper,
+.bottom-round-div {
+  height: 10%;
+  bottom: -10%;
+  background-color: #24053e;
 }
 
+/* Button */
 .btn {
   border: 1px solid transparent;
   padding: 1em 2em;
@@ -104,7 +108,6 @@ nav > a:hover {
   background-color: #44ffa1;
   color: #24053e;
 }
-
 .btn:hover {
   background-color: #24053e;
   color: #44ffa1;
@@ -112,391 +115,281 @@ nav > a:hover {
   cursor: pointer;
 }
 
+/* Round Divs */
 .bottom-round-div {
   position: absolute;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
-  height: 40%;
+  height: 20%;
   width: 100%;
+  bottom: -18%;
 }
 
-.for-upper {
-  bottom: -39%;
-  background-color: #24053e;
-}
-
-/* Middle section */
-
+/* Middle Section */
 .middle-section {
   padding-top: 25%;
   position: relative;
   background-color: #fcf8ff;
   z-index: -1;
 }
-
 .nuber-card-container {
-  padding: 0 5em;
-  margin-top: 2em;
+  padding: 0 2em;
+  margin-top: 8em;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
-
 .num-card {
   text-align: center;
-  padding: 1em;
-}
+  margin-bottom: 1em;
+  display: flex;
 
+  flex-direction: column;
+  gap: 2em;
+  padding: 1em 0;
+}
 .number {
+  align-self: center;
   border: 1px solid black;
   padding: 0.75em 1em;
   border-radius: 50%;
 }
-
+.num-card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
 .num-card > div > h3 {
-  font-size: 1.8rem;
-  margin: 1em 0 0.5em 0;
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
 }
-
 .for-middle {
+  height: 5%;
+  bottom: -5%;
   background-color: #fcf8ff;
-  height: 15%;
 }
 
-/* Bottom section */
+/* Bottom Section */
 .bottom-founder-secion {
-  margin-top: 6em;
-  margin-bottom: 2em;
-  padding: 6em;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 0;
+}
+.founder-div {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.founder-div {
-  margin-left: 3em;
-  display: flex;
   position: relative;
+  margin: 7em auto 0;
 }
-
-.founder-text-div > p {
-  line-height: 1.4;
-  margin: 0.5em 0;
-}
-
 .founder-image {
-  width: 40%;
-  height: 80%;
+  width: 80%;
+  margin: 0 5%;
+  height: auto;
 }
-
 .founder-text-div {
+  /* width: 100%; */
+  margin: 0 2em;
+  position: absolute;
+  right: 0;
+  bottom: -70%;
+  padding: 1em;
+  padding-bottom: 2em;
   background-color: #24053e;
   color: #fff;
   line-height: 1.2;
-  padding: 2em;
-  width: 60%;
-  position: absolute;
-  right: 5%;
-  bottom: -45%;
 }
-
 .founder-text-div-image {
-  position: absolute;
-  width: 17%;
-  bottom: -30%;
-  right: 13%;
+  display: none;
 }
 
 /* Footer */
-
 footer {
   text-align: center;
-  margin: 8em 0 2em;
+  margin: 17em 0 3em;
 }
-
 .social-icon-links {
-  padding: 2em;
+  padding: 1em;
 }
-
 .icon:hover {
   filter: invert(11%) sepia(86%) saturate(1852%) hue-rotate(238deg)
     brightness(85%) contrast(104%);
 }
 
-.twitter-icon {
-  margin: 0 1em;
-}
-
 /* Media Queries */
-@media (min-width: 1025px) {
+
+@media (max-width: 375px) {
+  nav {
+    padding: 2em 1em;
+  }
   .hero-phone-image {
-    width: 45%;
-    bottom: -95%;
+    bottom: -40%;
   }
-
-  .middle-section {
-    margin-top: 5%;
-  }
-
   .founder-text-div {
-    bottom: -20%;
-    right: 5%;
+    bottom: -100%;
   }
-
   footer {
-    margin-top: 4em;
+    margin-top: 20em;
   }
 }
-@media (max-width: 768px) {
-  .left-circle-image {
-    width: 25%;
-    left: 0;
-  }
-  .right-circle-image {
-    width: 20%;
-    right: -10%;
-    top: 50%;
-  }
 
-  nav {
-    padding: 1em 2em;
-  }
-
-  nav > a {
-    font-size: 1rem;
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  p,
-  a {
-    font-size: 1rem;
-  }
-
-  .hero-phone-image {
-    width: 50%;
-    bottom: -80%;
-  }
-
-  .middle-section {
-    margin-top: 5%;
-  }
-
-  .nuber-card-container {
-    padding: 0 2em;
-    flex-direction: column;
-    margin-top: 4em;
-  }
-
-  .num-card {
-    margin-bottom: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    gap: 2em;
-    padding-top: 0;
-  }
-
-  .num-card > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1em;
-  }
-
-  .num-card > div > h3 {
-    margin: 0;
-  }
-
-  .for-middle {
-    height: 17%;
-    bottom: -17%;
-  }
-
-  .bottom-founder-secion {
-    padding: 0 3em 0 0;
-    margin: 4em 0;
-    margin-top: 8em;
-    display: block;
-  }
-
-  .founder-div {
-    margin-top: 12em;
-  }
-
+@media (min-width: 425px) {
   .founder-text-div {
     bottom: -50%;
-    right: 0;
-    width: 75%;
-  }
-
-  .founder-text-div-image {
-    bottom: -70%;
-    width: 20%;
-    right: 15%;
   }
 
   footer {
     margin: 14em 0 2em;
   }
 }
-@media (max-width: 480px) {
-  h1 {
-    margin-top: 1em;
-    font-size: 3rem;
-  }
 
-  h2 {
-    font-size: 2.5rem;
+@media (min-width: 768px) {
+  * {
+    font-size: 18px;
   }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  p,
-  a {
-    font-size: 1rem;
-  }
-
-  .left-circle-image,
-  .right-circle-image {
-    display: none;
-  }
-
-  .bottom-round-div {
-    height: 20%;
-    bottom: -18%;
-  }
-
-  .hero-phone-image {
-    width: 70%;
-    bottom: -60%;
-  }
-
-  .nuber-card-container {
-    margin-top: 8em;
-  }
-
-  .for-middle {
-    height: 10%;
-    bottom: -10%;
-  }
-
-  .bottom-founder-secion {
-    text-align: center;
-  }
-
-  .founder-div {
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-  }
-
-  .founder-image {
-    width: 80%;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .founder-text-div {
-    width: 100%;
-    position: absolute;
-    padding: 1em;
-    padding-bottom: 2em;
-    bottom: -80%;
-    right: 0;
-  }
-
-  .founder-text-div-image {
-    display: none;
-  }
-
-  footer {
-    margin: 20em 0 4em;
-  }
-
-  .social-icon-links {
-    padding: 1em;
-  }
-}
-
-@media (max-width: 426px) {
-  .founder-text-div {
-    bottom: -100%;
-  }
-  footer {
-    margin-bottom: 2em;
-  }
-}
-
-@media (max-width: 376px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-  }
-
-  p,
-  a {
-    font-size: 0.9rem;
-  }
-
   nav {
     padding: 1em 2em;
   }
-
-  nav > a {
-    font-size: 0.9rem;
+  .main-heading-highlight {
+    font-size: 3rem;
   }
-
+  .left-circle-image,
+  .right-circle-image {
+    display: block;
+    position: absolute;
+  }
+  .left-circle-image {
+    left: -27.5%;
+    top: 5%;
+  }
+  .right-circle-image {
+    /* right: -27.5%; */
+    top: 50%;
+    right: -12.5%;
+  }
+  .btn {
+    padding: 1em 1.5em;
+  }
   .hero-phone-image {
-    width: 80%;
-    bottom: -55%;
+    width: 55%;
+    bottom: -70%;
   }
-
-  .number-card-container {
-    flex-direction: row;
+  .middle-section {
+    padding-top: 8em;
+    padding-bottom: 4em;
+  }
+  .nuber-card-container {
+    flex-direction: column;
+    margin-top: 6em;
   }
   .num-card {
-    gap: 1em;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 2em;
+    flex-direction: row;
   }
-  .num-card > div {
-    align-items: center;
-  }
-  .for-middle {
-    height: 5%;
-    bottom: -5%;
-  }
-
   .bottom-founder-secion {
-    margin-top: 0;
-    padding-top: 0;
+    /* padding: 0 3em 0 0; */
+    margin: 4em 0;
+    margin-top: 8em;
+    display: block;
+  }
+  .founder-div {
+    justify-content: flex-start;
+    margin: 0 auto;
+    padding: 0 2em;
+  }
+  .founder-image {
+    width: 50%;
+  }
+  .founder-text-div {
+    text-align: left;
+    bottom: -45%;
+    right: 5%;
+    width: 58%;
+  }
+  .founder-text-div-image {
+    display: block;
+    position: absolute;
+    width: 20%;
+    bottom: -67.5%;
+    right: 12.5%;
+  }
+  footer {
+    margin: 14em 0 2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  * {
+    font-size: 20px; /* Base font size for large screens */
+  }
+  nav {
+    padding: 2em;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  .hero-section {
+    padding-bottom: 8em;
+  }
+  .left-circle-image {
+    top: 20%;
+    left: -150px;
+  }
+  .right-circle-image {
+    /* right: -27.5%; */
+    top: 55%;
+    right: -50px;
+  }
+  .hero-phone-image {
+    /* max-width: 1200px; */
+    max-width: 650px;
+    bottom: -50%;
+  }
+  .middle-section {
+    padding-top: 350px;
+    margin-bottom: 200px;
+    height: 80%;
+  }
+  .bottom-round-div {
+    height: 10%;
+    bottom: -9%;
   }
 
+  .nuber-card-container {
+    flex-direction: row;
+    gap: 2em;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  .num-card {
+    flex-direction: column;
+    align-self: flex-start;
+    padding: 0;
+  }
+  .bottom-founder-secion {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
   .founder-text-div {
-    bottom: -110%;
+    bottom: -40%;
+    max-width: 450px;
+    width: 450px;
+    margin: 0 10%;
+  }
+  .founder-image {
+    width: 400px;
+    max-width: 450px;
+    margin: 0 10%;
+    /* max-width: ; */
+    /* margin-left: 4em; */
+  }
+  .founder-text-div-image {
+    bottom: -60%;
+    right: 15%;
+  }
+  footer {
+    margin-top: 12em;
   }
 }
